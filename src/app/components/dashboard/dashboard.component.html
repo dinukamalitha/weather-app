@@ -1,0 +1,27 @@
+<div class="container mt-4">
+
+  <div *ngIf="error" class="alert alert-dismissible alert-danger text-center">
+    <strong>Error!</strong> Invalid Input, please recheck!
+<!--    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>-->
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <img src="assets/weather1.png" alt="weather"/>
+    </div>
+    <div class="col-lg-6">
+      <input [(ngModel)]="city"  type="text" class="form-control form-control-lg" placeholder="Enter the City...">
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-lg mt-2" (click)="getWeatherData()">Search</button>
+      </div>
+
+      <div *ngIf="query" class="card mt-3">
+        <div class="card-body">
+          <p><b>Temperature: {{temperature | number: '1.0-0'}} °C </b></p>
+          <p><b>Humidity: {{humidity}}</b></p>
+          <p><b>Weather: {{weather}}</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
