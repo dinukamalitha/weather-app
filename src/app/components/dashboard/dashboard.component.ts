@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {WeatherService} from "../../services/weather.service";
 import {FormsModule} from "@angular/forms";
 import {DecimalPipe, NgIf} from "@angular/common";
+import {image1, image2, image3} from "../../../assets/imageData";
 
 @Component({
   selector: 'app-dashboard',
@@ -43,4 +44,8 @@ export class DashboardComponent {
       }
     });
   }
+
+  protected readonly image1 = image1;
+  protected readonly image2 = image2;
+  protected readonly image3 = image3;
 }
